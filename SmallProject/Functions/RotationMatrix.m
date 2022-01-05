@@ -12,7 +12,7 @@ M = [axis(1)^2+(1-axis(1)^2)*cos(angle)                axis(1)*axis(2)*(1-cos(an
      axis(1)*axis(2)*(1-cos(angle))+axis(3)*sin(angle) axis(2)^2+(1-axis(2)^2)*cos(angle)                   axis(2)*axis(3)*(1-cos(angle))-axis(1)*sin(angle);
      axis(1)*axis(3)*(1-cos(angle))-axis(2)*sin(angle) axis(2)*axis(3)*(1-cos(angle))+axis(1)*sin(angle)    axis(3)^2+(1-axis(3)^2)*cos(angle)];
     Rxyz = M
-    %if the determinant is different from zero 
+    %if the determinant is different from one
     % we know it is not a rotation matrix
     det(Rxyz) 
     if(det(Rxyz) ~= 1)
@@ -21,7 +21,7 @@ M = [axis(1)^2+(1-axis(1)^2)*cos(angle)                axis(1)*axis(2)*(1-cos(an
     %calculate the inverse
     Y = inv(Rxyz)
     
-    %Y*A should return the identity matrix
+    % Y*Rxyz should return the identity matrix
     ans = Y*Rxyz
 
     %this is a identity matrix to compare with
@@ -31,5 +31,5 @@ M = [axis(1)^2+(1-axis(1)^2)*cos(angle)                axis(1)*axis(2)*(1-cos(an
        return;
     end
     %if we are here is because the matrix is a rottation matrix
-
+    Rxyz;
 end
