@@ -1,8 +1,7 @@
-function quaternion = QuaternionFromAngleAndUnitVector(angle,unitVector)
-        quaternion(1) = cos(angle/2);
-        quaternion(2) = unitVector(1) * sin(angle/2);
-        quaternion(3) = unitVector(2) * sin(angle/2);
-        quaternion(4) = unitVector(3) * sin(angle/2);
-        quaternion;
+function quaternion = QuaternionFromAngleAndUnitVector(angle,axis)
+        quaternion(1) = cosd(angle/2);
+        quaternion(2) = axis(1)/VectorModule(axis) * sind(angle/2);
+        quaternion(3) = axis(2)/VectorModule(axis) * sind(angle/2);
+        quaternion(4) = axis(3)/VectorModule(axis) * sind(angle/2);
 end
 

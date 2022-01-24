@@ -1,6 +1,6 @@
     
 function vr =  VectorRotationByQuaternion(q,pureQuaternion)
-   qc = Conjugate(q)   
+   qc = Conjugate(q);   
    
    v1 = QuaternionMultiplication(q,pureQuaternion);
 
